@@ -5,7 +5,7 @@ class ToDoController {
 
   constructor() {
     extendObservable(this, {
-     toDos:["Tarea de ejemplo","Otra tarea de ejemplo"]
+     toDos:[]
     });
   }
 
