@@ -4,6 +4,14 @@ import toDoController from './ToDoController';
 
 class App extends Component {
 
+  addToDo(evento){
+    if(evento.which === 13){
+      let toDo = evento.target.value;
+      toDoController.addToDo(toDo);
+      evento.target.value="";
+    }
+  }
+
   deleteToDo(index){
     toDoController.deleteToDo(index);
   }
@@ -24,7 +32,7 @@ class App extends Component {
         </div>
         <div className="row">
             <div className="input-group input-group-todo">
-              <input type="text" className="form-control" placeholder="Añade tu tarea..."></input>
+              <input onKeyPress={this.addToDo.bind(this)} type="text" className="form-control" placeholder="Añade tu tarea..." ></input>
             </div>        
             <ul className="list-group list-group-todo">
               {listToDos}
