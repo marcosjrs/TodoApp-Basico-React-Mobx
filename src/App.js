@@ -3,11 +3,20 @@ import { observer } from 'mobx-react';
 import toDoController from './ToDoController';
 
 class App extends Component {
+
+  deleteToDo(index){
+    toDoController.deleteToDo(index);
+  }
+
   render() {
     const listToDos = [];
+
     toDoController.toDos.forEach(function(element,index) {
-      listToDos.push(<li key={index} className="list-group-item">{element}</li>);
+
+      listToDos.push(<li key={index} onClick={ ()=> this.deleteToDo(index) } className="list-group-item">{element}</li>);
+
     }, this);
+
     return (
       <div className="container">
         <div className="row title">
