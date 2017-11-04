@@ -1,3 +1,7 @@
 .input-group-todo{
   margin: 25px 0px;
 }
+.glyphicon-remove{
+  display: inline-block;
+  margin-right: 10px;
+}

@@ -21,14 +21,16 @@ class App extends Component {
 
     toDoController.toDos.forEach(function(element,index) {
 
-      listToDos.push(<li key={index} onClick={ ()=> this.deleteToDo(index) } className="list-group-item">{element}</li>);
+      listToDos.push(<li key={index} className="list-group-item"><span  onClick={ ()=> this.deleteToDo(index) } className="glyphicon glyphicon-remove"></span> {element}
+      
+      </li>);
 
     }, this);
 
     return (
       <div className="container">
         <div className="row title">
-          <h1>Lista de "ToDo" con ReactJS y Mobx</h1>
+          <h1>Lista de tareas pendientes</h1>
         </div>
         <div className="row">
             <div className="input-group input-group-todo">
